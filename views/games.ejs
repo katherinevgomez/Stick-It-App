@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+  <!-- THE HEAD TAG PARTIAL -->
+  <%- include("partials/head") %>
+  <body>
+    <!-- THE HEADER TAG PARTIAL -->
+    <%- include("partials/header") %>
+    <main>
+      <!-- *********DISPLAY OUR GOALS********* -->
+      <a href="/auth/logout"><button class="button">Logout</button></a>
+      <h1 class="title">My Game Dev Log</h1>
+      <% for (game of games) { %>
+      <h2 class="subtitle is-3"><%= game.text %></h2>
+      <% } %>
+      <!-- **********NEW GAMES FORM**************** -->
+      <h1>GAME TITTLE</h1>
+      <form action="/games" method="post">
+        <input type="text" placeholder="GAME TITTLE" name="text" />
+        <input type="submit" value="ADD GAME TITTLE" />
+      </form>
+      <h1>GAME GENRE</h1>
+      <form action="/games" method="post">
+        <input type="text" placeholder="GAME TITTLE" name="text" />
+        <input type="submit" value="ADD GAME GENRE" />
+      </form>
+    </main>
+    <!-- THE HEAD TAG PARTIAL -->
+    <%- include("partials/footer") %>
+  </body>
+</html>
