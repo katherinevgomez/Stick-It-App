@@ -8,23 +8,30 @@
     <!-- THE HEADER TAG PARTIAL -->
     <%- include("partials/header") %>
     <main>
-      <!-- *********DISPLAY OUR GOALS********* -->
+      <!-- *********DISPLAY OUR NOTES********* -->
       <a href="/auth/logout"><button class="button">Logout</button></a>
-      <h1 class="title">My Game Dev Log</h1>
+      <h1 class="title">My Game Dev Notes</h1>
       <% for (game of games) { %>
-      <h2 class="subtitle is-3"><%= game.text %></h2>
+      <card class="container"><%= game.text %></card>
       <% } %>
-      <!-- **********NEW GAMES FORM**************** -->
-      <h1>GAME TITTLE</h1>
+
+      <% for(let i = 0; i < games.length; i++){ %>
+      <a href="/games/<%= games[i].id; %>">
+          
+      </a>
+    
+        <!-- **********NEW GAMES FORM**************** -->
+      <h1>NOTES</h1>
       <form action="/games" method="post">
-        <input type="text" placeholder="GAME TITTLE" name="text" />
-        <input type="submit" value="ADD GAME TITTLE" />
+        <input type="text" class="note-input" placeholder="NOTES" name="text"/>
+        <input type="submit" value="POST NOTES" />
       </form>
-      <h1>GAME GENRE</h1>
-      <form action="/games" method="post">
-        <input type="text" placeholder="GAME TITTLE" name="text" />
-        <input type="submit" value="ADD GAME GENRE" />
+      <!--DELETE FORM-->
+      <form action="/games/<%= games[i].id %>?_method=DELETE" method="POST">
+        <input type="submit" value="DELETE"/>
       </form>
+
+      <% } %>
     </main>
     <!-- THE HEAD TAG PARTIAL -->
     <%- include("partials/footer") %>

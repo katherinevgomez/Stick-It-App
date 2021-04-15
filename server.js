@@ -1,7 +1,9 @@
+
 // grab environment variables
 require("dotenv").config();
 // IMPORT EXPRESS
 const express = require("express");
+
 // IMPORT DATABASE CONNECTION
 const mongoose = require("./db/connection");
 // IMPORT MERCED LOGGER
@@ -61,6 +63,7 @@ app.use(
 
 //HomeRouter
 app.use("/", HomeRouter);
+
 
 /////////////////////////////////////
 // App Listener

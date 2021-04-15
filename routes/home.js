@@ -4,6 +4,7 @@
 const router = require("express").Router()
 const bcrypt = require("bcryptjs")
 const User = require("../models/User")
+const Game = require("../models/User")
 
 //CUSTOM MIDDLEWARE FUNCTIONS
 const addUserToRequest = async (req, res, next) => {
@@ -35,6 +36,18 @@ router.use(addUserToRequest)
 ////////////////////////////////
 router.get("/", (req, res) => {
     res.render("home")
+})
+
+router.get("/about", (req,res) => {
+    res.render("about")
+})
+//DELETE ROUTE
+router.delete("/games/:id", (req,res) => {
+    
+    User.findByIdAndDelete(req.params.id,
+        (error, data) => {
+            res.redirect("/games")
+        })
 })
 
 //AUTH RELATETED ROUTES
@@ -99,9 +112,7 @@ router.get("/games", isAuthorized, async (req,res) => {
     })
 })
 
-router.get("/about", isAuthorized, async (req,res) => {
-    res.render("about")
-})
+
 
 //games create route when form submitted
 router.post("/games", isAuthorized, async (req, res) => {

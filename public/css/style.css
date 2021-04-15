@@ -1,15 +1,15 @@
 div {
-    background-color: white;
+    background-color:white;
     font-family: 'Open Sans', sans-serif;
     align-items: top;
     text-align: right;
     justify-content: flex-start;
 }
 
-container {
+.container {
     margin: 15px;
-    align-items: left;
-    text-align: left;
+    align-items: center;
+    text-align: center;
 }
 
 .button {
@@ -19,16 +19,39 @@ container {
 
 form {
     font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    align-items: center;
 }
 
 input {
     font-family: 'Open Sans', sans-serif;
     margin: 20px 10px 10px 10px;
+   
 }
 
 h1 {
     margin: 5px 20px;
+    text-align: center;
+    align-items: center;
 }
+
+h2 {
+    margin: 5px 20px;
+    text-align: center;
+}
+
 p {
     margin: 30px;
+    text-align: center;
+    align-items: center;
+}
+
+.card {
+    background-color:#00c2cb;
+    width: 1000px;
+    height: 1000px;
+    margin: 30px;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
 }
